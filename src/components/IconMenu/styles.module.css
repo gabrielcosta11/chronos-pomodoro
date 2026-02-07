@@ -1,0 +1,15 @@
+.iconBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 15%;
+    background-color: var(--primary);
+    color: var(--text-over-primary);
+}
+
+.iconBox svg {
+    width: 2rem;
+    height: 2rem;
+}

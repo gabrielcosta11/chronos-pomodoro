@@ -1,19 +1,24 @@
+import { Container } from "./components/Container";
 import { Heading } from "./components/Heading";
+import { Logo } from "./components/Logo";
 
 import "./styles/theme.css";
-import "./styles/global.css"
-import { TimerIcon } from "lucide-react";
+import "./styles/global.css";
+import { IconMenu } from "./components/IconMenu";
+import { HouseIcon } from "lucide-react";
+import { Menu } from "./components/Menu";
+
 
 export function App() {
     return (
         <>
-            <Heading>
-                Olá mundo!
-                <button>
-                    <TimerIcon/>
-                </button>
-            </Heading>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta alias eos est culpa repellendus dolorem dignissimos deserunt aliquam illo et eum totam odio iusto in odit, fuga quae quis? Cum.</p>
+            <Container>
+                <Logo/>
+            </Container>
+
+            <Container>
+                <Menu/>
+            </Container>
         </>
     )
 }; 
