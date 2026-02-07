@@ -1,0 +1,19 @@
+.input {
+    height: 2.6rem;
+    width: 18rem;
+    padding: 0.8rem;
+    border: 0 0 0 0.1rem;
+    background: none;
+    color: var(--text-default);
+    text-align: center;
+    outline: none;
+    border: 0.2rem solid transparent;
+    border-bottom: 0.2rem solid var(--primary);
+    transition: all 0.2s ease-in-out;
+}
+
+.input:focus {
+    outline: none;
+    border: 0.2rem solid var(--primary);
+    border-radius: 0.8rem;
+}

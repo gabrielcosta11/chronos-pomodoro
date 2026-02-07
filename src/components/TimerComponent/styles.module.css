@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:bolder;
+    font-size: 12rem;
+    padding: 0;
+}

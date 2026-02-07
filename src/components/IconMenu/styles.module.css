@@ -7,6 +7,11 @@
     border-radius: 15%;
     background-color: var(--primary);
     color: var(--text-over-primary);
+    transition: all 0.2s ease-in-out;
+}
+
+.iconBox:hover {
+    filter: brightness(80%);
 }
 
 .iconBox svg {
