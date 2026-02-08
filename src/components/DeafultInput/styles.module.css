@@ -1,5 +1,5 @@
 .input {
-    height: 2.6rem;
+    height: 3rem;
     width: 18rem;
     padding: 0.8rem;
     border: 0 0 0 0.1rem;
@@ -9,7 +9,7 @@
     outline: none;
     border: 0.2rem solid transparent;
     border-bottom: 0.2rem solid var(--primary);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
 }
 
 .input:focus {

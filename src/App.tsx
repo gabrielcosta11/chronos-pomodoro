@@ -10,9 +10,17 @@ import { Menu } from "./components/Menu";
 import { TimerComponent } from "./components/TimerComponent";
 import { Form } from "./components/Form";
 import { Footer } from "./components/Footer";
+import { useState } from "react";
 
 
 export function App() {
+
+    const [number, setNumber] = useState(0);
+
+    function handleClick() {
+        setNumber(prevState => prevState + 1)
+    }
+
     return (
         <>
             <Container>
