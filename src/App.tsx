@@ -2,15 +2,17 @@ import { Home } from "./pages/Home";
 
 import "./styles/theme.css";
 import "./styles/global.css";
-import { AboutPomodoro } from "./pages/AboutPomodoro";
-import { NotFound } from "./pages/NotFound";
+
+import { TaskContextProvider } from "./contexts/TaskContext/TaskContextProvider";
 
 
 export function App() {
 
     return (
         <>
-            <NotFound></NotFound>
+            <TaskContextProvider >
+                <Home/>
+            </TaskContextProvider>
         </>
     )
 }; 

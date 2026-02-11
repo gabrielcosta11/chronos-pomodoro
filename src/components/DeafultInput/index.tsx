@@ -6,14 +6,14 @@ type DeafultInputProps = {
     labelText?: string; 
 } & React.ComponentProps<'input'>
 
-export function DeafultInput({type, id, labelText}: DeafultInputProps) {
+export function DeafultInput({type, id, labelText, ...rest}: DeafultInputProps) {
 
     return (
         <>
             <label htmlFor={id}>
                 {labelText && <label htmlFor={id}>{labelText}</label>}
             </label>
-            <input className={styles.input} type={type} id={id} placeholder='Digite aqui' />
+            <input className={styles.input} type={type} id={id} {...rest} placeholder='Digite aqui' />
         </>
     )
 }

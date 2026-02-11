@@ -1,16 +1,17 @@
+import { useContext } from 'react';
+import type { HomeProps } from '../../pages/Home';
 import styles from './styles.module.css';
+import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 
 
-type TimerComponentProps = {
-    children: string
-}
+export function TimerComponent() {
 
-export function TimerComponent({children}: TimerComponentProps) {
+    const {state} = useTaskContext();
 
     return (
         <>
             <div className={styles.container}>
-                {children}
+                {state.formattedSecondsRemaining}
             </div>
         </>
     )
