@@ -17,3 +17,8 @@
     border: 0.2rem solid var(--primary);
     border-radius: 0.8rem;
 }
+
+.input:disabled {
+    border-bottom: 0.2rem solid var(--text-disabled);
+    color: var(--text-muted);
+}
