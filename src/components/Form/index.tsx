@@ -8,18 +8,18 @@ import type { TaskModel } from '../../Models/TaskModel';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { getNextCycle } from '../../utils/getNextCycle';
 import { getNextCycleType } from '../../utils/getNextCycleType';
-import { formatSecondsToMinutes } from '../../utils/formatSecondsToMinutes';
+import { TaskActionsTypes } from '../../contexts/TaskContext/TaskActions';
+import { Tips } from '../Tips';
 
 export function Form() {
 
-    const { state, setState } = useTaskContext()
+    const { state, dispatch } = useTaskContext()
 
     const taskNameInput = useRef<HTMLInputElement>(null)
 
     //ciclos
     const nextCycle = getNextCycle(state.currentCycle)
     const nextCycleType = getNextCycleType(nextCycle)
-
 
     function handleCreateNewTask(event: React.SubmitEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -46,20 +46,8 @@ export function Form() {
             type: nextCycleType
         }
 
-        const secondsRemaining = newTask.duration * 60
 
-        setState(
-            prevState => {
-                return {
-                    ...prevState,
-                    activeTask: newTask,
-                    currentCycle: nextCycle,
-                    secondsRemaining,
-                    formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
-                    tasks: [...prevState.tasks, newTask]
-                }
-            }
-        )
+        dispatch({type: TaskActionsTypes.START_TASK, payload: newTask})
 
     }
 
@@ -68,23 +56,11 @@ export function Form() {
 
         e.preventDefault()
 
-        setState(
-            prevState => {
-                return {
-                    ...prevState,
-                    activeTask: null,
-                    secondsRemaining: 0,
-                    formattedSecondsRemaining: '00:00',
-                    tasks: prevState.tasks.map(task => {
-                        if (prevState.activeTask && prevState.activeTask.id === task.id) {
-                            return { ...task, interruptDate: Date.now() }
-                        }
-                        return task
-                    })
-                }
-            }
-        )
+        dispatch({type: TaskActionsTypes.INTERRUPT_TASK})
+
     }
+
+
 
     return (
         <>
@@ -97,7 +73,7 @@ export function Form() {
                     disabled={!!state.activeTask}
                 />
 
-                <p>Próximo descanso é de 5min</p>
+                <Tips nextCycleType={nextCycleType}/>
 
                 {
                     state.currentCycle > 0 && (<Cycles />)
