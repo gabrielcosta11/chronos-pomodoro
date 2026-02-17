@@ -3,7 +3,9 @@ import type { TaskModel } from "../../Models/TaskModel"
 export enum TaskActionsTypes {
     START_TASK = 'START_TASK',
     INTERRUPT_TASK = 'INTERRUPT_TASK',
-    RESET_STATE = 'RESET_STATE'
+    RESET_STATE = 'RESET_STATE',
+    COUNT_DOWN = 'COUNT_DOWN',
+    COMPLETE_TASK = 'COMPLETE_TASK'
 }
 
 export type TaskActionModel =
@@ -13,7 +15,16 @@ export type TaskActionModel =
     }
     |
     {
+        type: TaskActionsTypes.COUNT_DOWN,
+        payload: {secondsRemaining: number}
+    }
+    |
+    {
         type: TaskActionsTypes.INTERRUPT_TASK
+    }
+    |
+    {
+        type: TaskActionsTypes.COMPLETE_TASK
     }
     |
     {

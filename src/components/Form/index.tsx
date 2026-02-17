@@ -10,10 +10,6 @@ import { getNextCycle } from '../../utils/getNextCycle';
 import { getNextCycleType } from '../../utils/getNextCycleType';
 import { TaskActionsTypes } from '../../contexts/TaskContext/TaskActions';
 import { Tips } from '../Tips';
-<<<<<<< HEAD
-=======
-import { TimerWorkerManager } from '../../workers/TimerWorkerManager';
->>>>>>> 9c75ef3 (Feature: Timer)
 
 export function Form() {
 
