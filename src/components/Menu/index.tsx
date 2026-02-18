@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import type React from 'react';
 import { IconMenu } from '../IconMenu';
 import { useEffect, useState } from 'react';
+import { RouterLink } from '../RouterLink';
 
 
 type AvailableThemes = 'dark' | 'light'
@@ -39,22 +40,22 @@ export function Menu() {
     return (
         <>
             <nav className={styles.menu}>
-                <a href="#" title='Tela inical'>
+                <RouterLink href="/" title='Tela inical'>
                     <IconMenu>
                         <HouseIcon />
                     </IconMenu>
-                </a>
-                <a href="#" title='Histórico'>
+                </RouterLink>
+                <RouterLink href="/history" title='Histórico'>
                     <IconMenu>
                         <HistoryIcon />
                     </IconMenu>
-                </a>
-                <a href="#" title='Configurações'>
+                </RouterLink>
+                <RouterLink href="settings" title='Configurações'>
                     <IconMenu>
                         <SettingsIcon />
                     </IconMenu>
-                </a>
-                <a
+                </RouterLink>
+                <RouterLink
                     href="#"
                     title='Tema'
                     onClick={handleThemeChange}
@@ -62,7 +63,7 @@ export function Menu() {
                     <IconMenu>
                         {nextThemeIcon[theme]}
                     </IconMenu>
-                </a>
+                </RouterLink>
             </nav>
         </>
     )

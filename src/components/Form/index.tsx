@@ -10,7 +10,6 @@ import { getNextCycle } from '../../utils/getNextCycle';
 import { getNextCycleType } from '../../utils/getNextCycleType';
 import { TaskActionsTypes } from '../../contexts/TaskContext/TaskActions';
 import { Tips } from '../Tips';
-import { toast } from 'react-toastify';
 import { showMessage } from '../../adapters/showMessage';
 
 export function Form() {
@@ -59,7 +58,7 @@ export function Form() {
         console.log('interrupt');
 
         showMessage.dismiss()
-        showMessage.info('Tarefa interrompida')
+        showMessage.error('Tarefa interrompida')
 
         e.preventDefault()
 
