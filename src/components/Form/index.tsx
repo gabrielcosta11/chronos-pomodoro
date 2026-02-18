@@ -15,8 +15,8 @@ import { showMessage } from '../../adapters/showMessage';
 export function Form() {
 
     const { state, dispatch } = useTaskContext()
-
     const taskNameInput = useRef<HTMLInputElement>(null)
+    const lastTaskName = state.tasks.at(-1)?.name
 
     //ciclos
     const nextCycle = getNextCycle(state.currentCycle)
@@ -77,6 +77,7 @@ export function Form() {
                     labelText='TASK'
                     ref={taskNameInput}
                     disabled={!!state.activeTask}
+                    defaultValue={lastTaskName}
                 />
 
                 <Tips nextCycleType={nextCycleType}/>
