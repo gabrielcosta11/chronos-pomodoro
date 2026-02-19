@@ -1,0 +1,50 @@
+.tableBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.table {
+    width: 75%;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    border-spacing: 0;
+    font-size: 1.2rem;
+}
+
+.table th {
+    background-color: var(--gray-500);
+}
+
+.table tr {
+    background-color: var(--gray-800);
+}
+
+.table :is(th, td) {
+    padding: 1rem 1.6rem;
+    text-align: left;
+    border-bottom: 0.01rem solid  var(--gray-500);
+}
+
+.thSort span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem
+}
+
+.thSort svg{
+    cursor: pointer;
+    width: auto;
+    height: 1.4rem;
+
+}
+
+.thSort svg:hover {
+    color: green;
+}
+
+/* .thSort:hover {
+    filter: brightness(80%);
+} */
+
