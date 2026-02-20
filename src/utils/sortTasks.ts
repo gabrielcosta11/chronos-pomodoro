@@ -1,10 +1,13 @@
 import type { TaskModel } from "../Models/TaskModel"
 
-export type SortTasksType = {
-    tasks: TaskModel[],
+export type SortConfig = {
     direction?: 'asc' | 'desc',
     field?: keyof TaskModel
 }
+
+export type SortTasksType = {
+    tasks: TaskModel[]
+} & SortConfig
 
 
 export function sortTasks({

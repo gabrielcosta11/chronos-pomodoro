@@ -60,6 +60,22 @@ export function taskReducer(state: TaskStateModel, action: TaskActionModel): Tas
                 })
             }
         }
+        case TaskActionsTypes.DELETE_TASKS: {
+            return {
+                ...state,
+                currentCycle: 0,
+                activeTask: null,
+                secondsRemaining: 0,
+                formattedSecondsRemaining: '00:00',
+                tasks: []
+            }
+        }
+        case TaskActionsTypes.CHANGE_SETTINGS: {
+            return {
+                ...state,
+                config: action.payload
+            }
+        }
 
     }
 

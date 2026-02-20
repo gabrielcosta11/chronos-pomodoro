@@ -50,7 +50,7 @@ export function Menu() {
                         <HistoryIcon />
                     </IconMenu>
                 </RouterLink>
-                <RouterLink href="settings" title='Configurações'>
+                <RouterLink href="/settings" title='Configurações'>
                     <IconMenu>
                         <SettingsIcon />
                     </IconMenu>

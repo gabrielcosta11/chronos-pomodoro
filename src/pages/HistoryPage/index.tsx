@@ -1,6 +1,6 @@
 import { Container } from "../../components/Container";
 import { Heading } from "../../components/Heading";
-import { History } from "../../components/History";
+import { History } from "../History";
 import { MainTemplate } from "../../templates/MainTemplate";
 
 export function HistoryPage() {
