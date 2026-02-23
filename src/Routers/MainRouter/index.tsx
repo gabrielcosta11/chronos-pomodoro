@@ -3,7 +3,6 @@ import { AboutPomodoro } from "../../pages/AboutPomodoro";
 import { NotFound } from "../../pages/NotFound";
 import { Home } from "../../pages/Home";
 import { useEffect } from "react";
-import { HistoryPage } from "../../pages/HistoryPage";
 import { History } from "../../pages/History";
 import { Settings } from "../../pages/Settings";
 

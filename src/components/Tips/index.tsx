@@ -1,5 +1,5 @@
 import { useTaskContext } from "../../contexts/TaskContext/useTaskContext"
-import type { TaskModel } from "../../Models/TaskModel"
+import type { TaskModel } from "../../models/TaskModel"
 
 
 type TipsProps = {

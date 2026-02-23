@@ -9,5 +9,9 @@
 }
 
 .content {
-    margin: 3rem;
+    margin: 2rem;
+}
+
+.footer {
+    margin-top: auto;
 }

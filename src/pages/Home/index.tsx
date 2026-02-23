@@ -1,11 +1,16 @@
+import { useEffect } from "react";
 import { Container } from "../../components/Container";
 import { Form } from "../../components/Form";
 import { TimerComponent } from "../../components/TimerComponent";
-import type { TaskStateModel } from "../../Models/TaskStateModel";
 import { MainTemplate } from "../../templates/MainTemplate";
 
 
 export function Home() {
+
+    useEffect(() => {
+        document.title = 'Chronos Pomodoro'
+    }, [])
+
 
     return (
         <MainTemplate>

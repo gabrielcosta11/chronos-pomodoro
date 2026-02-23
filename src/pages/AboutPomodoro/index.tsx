@@ -3,9 +3,15 @@ import { GenericHtml } from "../../components/GenericHtml";
 import { Heading } from "../../components/Heading";
 import { MainTemplate } from "../../templates/MainTemplate";
 import { RouterLink } from "../../components/RouterLink";
+import { useEffect } from "react";
 
 
 export function AboutPomodoro() {
+
+    useEffect(() => {
+        document.title = 'Entenda a Técnica Pomodor - Chronos Pomodoro'
+    }, [])
+
     return (
         <MainTemplate>
             <Container>

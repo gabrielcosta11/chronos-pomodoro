@@ -22,7 +22,7 @@ export function MainTemplate({children}: MainTemplateProps) {
 
             {children}
 
-            <Container>
+            <Container isFooter={true}>
                 <Footer/>
             </Container>
         </>

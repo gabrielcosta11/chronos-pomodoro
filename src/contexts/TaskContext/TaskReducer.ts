@@ -1,4 +1,4 @@
-import type { TaskStateModel } from "../../Models/TaskStateModel";
+import type { TaskStateModel } from "../../models/TaskStateModel";
 import { formatSecondsToMinutes } from "../../utils/formatSecondsToMinutes";
 import { getNextCycle } from "../../utils/getNextCycle";
 import { TaskActionsTypes, type TaskActionModel } from "./TaskActions";

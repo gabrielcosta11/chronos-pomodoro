@@ -2,7 +2,7 @@ import { MoveDown, MoveUp, Trash2 } from 'lucide-react';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { Heading } from '../../components/Heading';
 import styles from './styles.module.css';
-import type { TaskModel } from '../../Models/TaskModel';
+import type { TaskModel } from '../../models/TaskModel.ts';
 import { sortTasks, type SortConfig } from '../../utils/sortTasks';
 import { useEffect, useMemo, useState } from 'react';
 import { MainTemplate } from '../../templates/MainTemplate';
@@ -41,6 +41,10 @@ export function History() {
         longBreakTime: 'Descanso longo',
         workTime: 'Foco',
     }
+
+    useEffect(() => {
+        document.title = 'Histórico - Chronos Pomodoro'
+    }, [])
 
     function status(task: TaskModel) {
         if (state.activeTask && task.id === state.activeTask.id) return 'Em progresso...'
@@ -126,7 +130,7 @@ export function History() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {sortedTasks.map((task) => {
+                                        {sortedTasks.slice(0, 100).map((task) => {
                                             const date = formatedDate.format(task.startDate).replace(',', '')
 
                                             return (

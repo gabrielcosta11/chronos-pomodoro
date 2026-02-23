@@ -1,4 +1,4 @@
-import type { TaskModel } from "../Models/TaskModel"
+import type { TaskModel } from "../models/TaskModel"
 
 export type SortConfig = {
     direction?: 'asc' | 'desc',

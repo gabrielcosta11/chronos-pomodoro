@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Container } from '../../components/Container';
 import { DeafultInput } from '../../components/DeafultInput';
 import { Heading } from '../../components/Heading';
@@ -20,6 +20,10 @@ export function Settings() {
     const shortBreakTimeInput = useRef<HTMLInputElement>(null)
     const longBreakTimeInput = useRef<HTMLInputElement>(null)
 
+    useEffect(() => {
+        document.title = 'Configurações - Chronos Pomodoro'
+    }, [])
+
     function handleUpdateSettings(event: React.SubmitEvent<HTMLFormElement>) {
         event.preventDefault()
         showMessage.dismiss()
@@ -40,7 +44,7 @@ export function Settings() {
             formErros.push('O tempo de descanso longo deve ser entre 1 e 60 minutos.')
         }
 
-        if(formErros.length > 0) {
+        if (formErros.length > 0) {
             formErros.forEach(error => {
                 showMessage.error(error)
             });
@@ -48,7 +52,7 @@ export function Settings() {
         }
 
         dispatch({
-            type: TaskActionsTypes.CHANGE_SETTINGS, 
+            type: TaskActionsTypes.CHANGE_SETTINGS,
             payload: {
                 workTime: workTimeValue,
                 shortBreakTime: shortBreakTimeValue,

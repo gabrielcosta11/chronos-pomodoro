@@ -19,21 +19,21 @@
 }
 
 .tableBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    overflow: auto;
+    max-height: 35rem;
+    border-radius: 0.8rem;
 }
 
 .table {
-    width: 75%;
-    border-radius: 0.8rem;
-    overflow: hidden;
-    border-spacing: 0;
-    font-size: 1.2rem;
+    width: 100%;
+    min-width: 64rem;
+    font-size: 1.6rem;
+    border-collapse: collapse;
 }
 
 .table th {
+    position: sticky;
+    top: 0;
     background-color: var(--gray-500);
 }
 
@@ -44,7 +44,7 @@
 .table :is(th, td) {
     padding: 1rem 1.6rem;
     text-align: left;
-    border-bottom: 0.01rem solid  var(--gray-500);
+    border-bottom: 0.01rem solid var(--gray-500);
 }
 
 .thSort span {
@@ -53,7 +53,7 @@
     gap: 0.3rem
 }
 
-.thSort svg{
+.thSort svg {
     cursor: pointer;
     width: auto;
     height: 1.4rem;
@@ -67,4 +67,3 @@
 /* .thSort:hover {
     filter: brightness(80%);
 } */
-
